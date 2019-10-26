@@ -1,2 +1,2 @@
-# demo-kotrin
-Kotrin + Spring 練習用
+# demo-kotlin
+Kotlin + Spring 練習用
