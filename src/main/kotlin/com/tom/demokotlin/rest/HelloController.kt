@@ -1,11 +1,11 @@
-package com.tom.demokotlin.controller
+package com.tom.demokotlin.rest
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class HelloContrlller {
+class HelloController {
     @GetMapping("hello")
     fun hello(@RequestParam("name") name: String): String = "Hello, $name"
 }
