@@ -28,5 +28,10 @@ out/
 /nbdist/
 /.nb-gradle/
 
+### WebFramework ###
+bulma.css
+bulma.css.map
+bulma.min.css
+
 ### VS Code ###
 .vscode/
