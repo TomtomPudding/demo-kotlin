@@ -1,11 +1,47 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
-    <link href="/css/bulma.css" th:href="@{/css/bulma.css}" rel="stylesheet"></link>
-    <title>Hello Thymeleaf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/bulma/bulma.css" th:href="@{/css/bulma/bulma.css}" rel="stylesheet">
+    </link>
+    <link href="/css/login/login.css" th:href="@{/css/login/login.css}" rel="stylesheet">
+    </link>
+    <title>samlpe</title>
 </head>
+
 <body>
-    <P>sample</P>
+
+    <section class="hero is-success is-fullheight has-background-dark-brown">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-centered is-half is-offset-one-quarter">
+                    <h1 class="title has-text-white">SAMPLE</h1>
+                </div>
+                <div class="columns is-half is-offset-one-quarter is-centered is-mobile">
+                    <div class="box has-background-bright-brown ">
+                        <form>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="email" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <button class="button has-background-blue is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+    </section>
 </body>
+
 </html>
