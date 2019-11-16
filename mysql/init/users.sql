@@ -1,0 +1,2 @@
+INSERT INTO `chart-api-server`.`users` (`id`,`name`,`password`,`create_at`,`updated_at`) VALUES ('0000001123','tomtom','pudding','2019-11-16 04:04:21','2019-11-16 04:04:21');
+INSERT INTO `chart-api-server`.`users` (`id`,`name`,`password`,`create_at`,`updated_at`) VALUES ('0000001124','hoku','hokuhoku','2019-11-16 04:04:21','2019-11-16 04:04:21');

@@ -35,3 +35,7 @@ bulma.min.css
 
 ### VS Code ###
 .vscode/
+
+### dockerはあげない ###
+docker-compose.yml
+toolbox-mysql-setting.sh
