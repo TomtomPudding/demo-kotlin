@@ -1,4 +1,4 @@
-package com.tom.demokotlin.controller
+package com.tom.demokotlin.controller.TopPage
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

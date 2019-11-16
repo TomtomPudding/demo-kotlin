@@ -1,11 +1,116 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
-    <link href="/css/bulma.css" th:href="@{/css/bulma.css}" rel="stylesheet"></link>
+    <link href="/css/bulma.css" rel="stylesheet">
+    </link>
     <title>Hello Thymeleaf</title>
 </head>
+
 <body>
-    <P>sample</P>
+    ゼロイチ-TOP
+    エンジニア向けキャリア
+    Bootstrap入門
+    jQuery入門
+    プログラミング・イベント検索
+    ゼロイチ-TOP初心者向けcssCSSフレームワークBulma（ブルマ）を使ったグリッドシステムの解説
+    2019-02-10
+    2019-02-10
+    CSSフレームワークBulma（ブルマ）を使ったグリッドシステムの解説
+    20190210bluma
+    前回はCSSフレームワークBulma（ブルマ）の簡単な解説を行いました。
+
+    Bulma自体の解説は以下を御覧ください。
+
+    軽量なCSSフレームワークBulma（ブルマ）のご紹介
+
+    今回はCSSフレームワークBulma（ブルマ）を利用したグリットシステムを紹介します。
+
+    なお今回はCDNを利用した解説を行いますので、Sass対応の解説は行いません。
+
+    Bulma（ブルマ）のグリッドシステム
+    Bootstrapと同様にBulma（ブルマ）のグリッドシステムは縦１２列で構成されており、それ以上になると自動折返しの設定などを行います。
+
+    もちろん、レシポンシブデザインを意識した対応が可能です。 公式サイトは こちら
+
+    グリッドシステムのサンプルコード
+    以下は Bulma（ブルマ）のグリッドシステムのサンプルコードです。
+
+    そのままメモ帳などにコピーいただければ動作確認が可能です。
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Bulma(ブルマ）でレシポンシブデザインを対応する| 独学者・初心者向けプログラミング・SEO入門サイト</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <style>
+            .container {
+                padding: 1%;
+            }
+        </style>
+    </head>
+
+    <div class="container">
+        <p style="text-align: center;margin: 20px">以下columnsクラスで全要素が囲まれています。</p>
+        <!--以下からwrapperクラス-->
+        <div class="columns">
+            <!--以下からネストしたクラス-->
+            <div class="column">
+                <div class="columns notification is-primary">
+                    <!--ネストした最下部のブロッククラス１-->
+                    <div class="column has-text-centered">最下部の要素1</div>
+                </div>
+                <!--ネストした中部ブロッククラス１-->
+                <div class="columns notification is-primary">
+                    <!--ネストした最下部のブロッククラス2-->
+                    <div class="column has-text-centered">最下部の要素2</div>
+                </div>
+            </div>
+            <!--以下からネストしたクラス-->
+            <div class="column sample2">
+                <div class="columns notification is-primary has-text-centered">
+                    <!--ネストした最下部のブロッククラス3-->
+                    <div class="column">最下部の要素3</div>
+
+                </div>
+                <div class="columns notification is-primary has-text-centered">
+                    <!--ネストした最下部のブロッククラス4-->
+                    <div class="column">最下部の要素4</div>
+
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center;margin: 20px">is-mobileでMBにもグリッドシステムを適用</p>
+        <div class="columns">
+            <div class="column sample1">
+                <div class="columns notification is-primary is-mobile">
+                    <div class="column" style="border: 1px solid;">最下部の要素1
+                        <!--以下はFont Awesomeを利用-->
+                        <button class="fas fa-spinner fa-pulse"></button>
+                    </div>
+                    <div class="column" style="border: 1px solid;">最下部の要素2
+                        <!--以下はFont Awesomeを利用-->
+                        <button class="fas fa-male fa-pulse"></button>
+                    </div>
+                    <div class="column" style="border: 1px solid;">最下部の要素3</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素4</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素5</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素6</div>
+                </div>
+                <div class="columns notification is-primary is-mobile  is-multiline">
+                    <div class="column is-8" style="border: 1px solid;">最下部の要素7</div>
+                    <div class="column is-3" style="border: 1px solid;">最下部の要素8</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素9</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素10</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素11</div>
+                    <div class="column" style="border: 1px solid;">最下部の要素12</div>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

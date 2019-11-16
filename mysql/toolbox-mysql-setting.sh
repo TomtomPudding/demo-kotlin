@@ -1,0 +1,1 @@
+sudo cp -R /work_space/demo-kotlin/mysql/init/* /mnt/sda1/var/lib/docker/volumes/demo-kotlin_myinitdb/_data
