@@ -8,7 +8,7 @@
     </link>
     <link href="/css/base.css" th:href="@{/css/base.css}" rel="stylesheet">
     </link>
-    <title>samlpe</title>
+    <title>sample</title>
 </head>
 
 <body>
@@ -25,30 +25,34 @@
                 <div class="columns is-mobile is-centered">
                     <div class="column is-half">
                         <div class="box has-background-bright-brown">
-                            <form>
+                            <form th:action="@{/login}" method="post">
 
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-large" type="email" placeholder="Email">
+                                        <input class="input is-large" name="name" type="text" placeholder="username"
+                                            maxlength="50">
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-large" type="password" placeholder="Password">
+                                        <input class="input is-large" name="password" type="password"
+                                            placeholder="Password" maxlength="50">
                                     </div>
                                 </div>
 
                                 <p class="help is-danger is-right">
                                     ログインできません
                                 </p>
-                                <button class="button has-background-blue is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                                <button class="button has-background-blue is-block is-info is-large is-fullwidth">Login
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                             </form>
 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
     </section>
 </body>
