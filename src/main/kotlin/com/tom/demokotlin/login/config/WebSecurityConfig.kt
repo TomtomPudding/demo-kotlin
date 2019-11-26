@@ -56,7 +56,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         http
                 .authorizeRequests()
-                    .antMatchers("/","/login","/error").permitAll()
+                    .antMatchers("/login","/error").permitAll()
                     .anyRequest()
                     .authenticated()
                 .and()
@@ -65,7 +65,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
                     .loginProcessingUrl("/login") //フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
                     .usernameParameter("name") //リクエストパラメータのname属性を明示
                     .passwordParameter("password")
-                    .successForwardUrl("/chat")
+                    .successForwardUrl("/stepping")
                     .failureUrl("/login?error")
                 .and()
                     .logout()
@@ -76,8 +76,6 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
                     .exceptionHandling()
                     .authenticationEntryPoint(MyAuthenticationEntryPoint())
                     .accessDeniedHandler(MyAccessDeniedHandler())
-        http
-                .csrf().disable()
     }
 
 
@@ -92,11 +90,6 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     public override fun configure(auth: AuthenticationManagerBuilder) {
         println("aaa")
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder())
-        /*
-		auth
-		    .inMemoryAuthentication()
-		        .withUser("user").password("{noop}password").roles("USER");
-		*/
     }
 
 }

@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("chat")
 class ChatController {
     @GetMapping
-    fun openTopPage():String{
+    fun openChatPage():String{
         return "talk"
     }
 
+
     @PostMapping
-    fun TopPage():String{
+    fun chatPage():String{
         return "talk"
     }
+
 }

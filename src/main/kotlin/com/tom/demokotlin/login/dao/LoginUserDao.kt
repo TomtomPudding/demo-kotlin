@@ -7,7 +7,7 @@ import javax.persistence.EntityManager
 
 /**
  * DBへのアクセスメソッドを呼び出すDao
- * @author aoi
+ * @author tom
  */
 @Repository
 class LoginUserDao {
