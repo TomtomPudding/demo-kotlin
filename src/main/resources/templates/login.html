@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,8 @@
     <link href="/css/bulma/bulma.css" th:href="@{/css/bulma/bulma.css}" rel="stylesheet">
     </link>
     <link href="/css/base.css" th:href="@{/css/base.css}" rel="stylesheet">
+    </link>
+    <link href="/css/login/login.css" th:href="@{/css/login/login.css}" rel="stylesheet">
     </link>
     <title>sample</title>
 </head>
@@ -23,27 +25,30 @@
                 </div>
 
                 <div class="columns is-mobile is-centered">
-                    <div class="column is-half">
+                    <div class="column is-half ">
+                        <p class="help is-danger is-right">
+                            ログインできません
+                        </p>
+                    </div>
+                </div>
+
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-login-width">
                         <div class="box has-background-bright-brown">
                             <form th:action="@{/login}" method="post">
 
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-large" name="name" type="text" placeholder="username"
-                                            maxlength="50">
+                                        <input class="input is-large" name="name" type="text" placeholder="username" maxlength="50">
                                     </div>
                                 </div>
 
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-large" name="password" type="password"
-                                            placeholder="Password" maxlength="50">
+                                        <input class="input is-large" name="password" type="password" placeholder="Password" maxlength="50">
                                     </div>
                                 </div>
 
-                                <p class="help is-danger is-right">
-                                    ログインできません
-                                </p>
                                 <button class="button has-background-blue is-block is-info is-large is-fullwidth">Login
                                     <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                             </form>

@@ -26,3 +26,7 @@
   background-color: #e5af7f !important;
 }
 
+.is-border-blue{
+  border-bottom: 3px solid #728caf;
+
+}
