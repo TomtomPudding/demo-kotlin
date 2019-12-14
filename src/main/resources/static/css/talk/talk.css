@@ -4,11 +4,65 @@
     position: relative;
 }
 
+.is-width-side{
+  flex: none;
+  width: 300px;
+}
+
 
 .is-fullheight-with-headf {
     min-height: calc(100% - 20px);
 }
 
+.icon-box-s {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  overflow: hidden;   /* ※縦横を同値に */
+}
+
+.is-cos-height{
+  max-height: calc(100% - 116px);
+  padding: 24px 24px;
+}
+
+.chat-box{
+  min-width: 500px ;
+
+}
+
+.is-input-padding{
+  padding: 10px;
+}
+
+.panel.is-white .panel-tabs a.is-active {
+border-bottom-color: white;
+}
+
+.scroll{
+max-height: calc(100vh - 53px);
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+.no-border-radius{
+border-radius: 0;
+}
+.chat-box{
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
+  width: calc(100vw - 360px);
+  max-height: calc(100vh - 164px);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
 
 .balloon-set-box {
     display: flex;
@@ -44,7 +98,7 @@
     right: -10px;
   }
   
-  .icon-box {
+  .icon-box-m {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -54,11 +108,4 @@
   }
 
 
-.is-cos-height{
-    height: calc(100% - 78px);
-}
 
-.chat-box{
-    min-width: 500px ;
-
-}
