@@ -1,4 +1,4 @@
-package com.tom.demokotlin.login.handler
+package com.chartapp.login.handler
 
 import org.springframework.security.access.AccessDeniedException
 import org.springframework.security.web.access.AccessDeniedHandler

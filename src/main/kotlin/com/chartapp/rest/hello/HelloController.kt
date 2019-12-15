@@ -1,4 +1,4 @@
-package com.tom.demokotlin.rest.hello
+package com.chartapp.rest.hello
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

@@ -1,4 +1,4 @@
-package com.tom.demokotlin
+package com.chartapp
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,9 +1,8 @@
-package com.tom.demokotlin.login.config
+package com.chartapp.login.config
 
 
-import com.tom.demokotlin.login.handler.MyAccessDeniedHandler
-import com.tom.demokotlin.login.handler.MyAuthenticationEntryPoint
-import com.tom.demokotlin.login.service.UserDetailsServiceImpl
+import com.chartapp.login.handler.SuccessAccessHandler
+import com.chartapp.login.service.UserDetailsServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -56,26 +55,22 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         http
                 .authorizeRequests()
-                    .antMatchers("/login","/error").permitAll()
+                    .antMatchers("/login").permitAll()
                     .anyRequest()
                     .authenticated()
                 .and()
-                .formLogin()
-                    .loginPage("/login") //ログインページはコントローラを経由しないのでViewNameとの紐付けが必要
+                    .formLogin()
                     .loginProcessingUrl("/login") //フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
+                    .loginPage("/login") //ログインページはコントローラを経由しないのでViewNameとの紐付けが必要
                     .usernameParameter("name") //リクエストパラメータのname属性を明示
                     .passwordParameter("password")
-                    .successForwardUrl("/stepping")
+                    .successHandler(SuccessAccessHandler())
                     .failureUrl("/login?error")
                 .and()
                     .logout()
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login?logout")
                     .permitAll()
-                .and()
-                    .exceptionHandling()
-                    .authenticationEntryPoint(MyAuthenticationEntryPoint())
-                    .accessDeniedHandler(MyAccessDeniedHandler())
     }
 
 
@@ -88,7 +83,6 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     @Autowired
     @Throws(Exception::class)
     public override fun configure(auth: AuthenticationManagerBuilder) {
-        println("aaa")
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder())
     }
 

@@ -1,4 +1,4 @@
-package com.tom.demokotlin.rest.hello
+package com.chartapp.rest.hello
 
 import io.swagger.annotations.ApiModelProperty
 

@@ -36,6 +36,12 @@ bulma.min.css
 ### VS Code ###
 .vscode/
 
-### dockerはあげない ###
-docker-compose.yml
+### jooq script ###
+jooq/
+
+### redis data ###
+/redis/
+
+### dockerあげない ###
+.docker-compose.yml
 toolbox-mysql-setting.sh

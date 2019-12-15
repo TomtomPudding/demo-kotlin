@@ -1,7 +1,7 @@
-package com.tom.demokotlin.login.service
+package com.chartapp.login.service
 
-import com.tom.demokotlin.login.dao.LoginUserDao
-import com.tom.demokotlin.login.entity.LoginUserEntity
+import com.chartapp.jooq.codes.foobar.cv.tables.records.UsersRecord
+import com.chartapp.login.dao.LoginUserDao
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -11,7 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
-import java.util.*
 
 /**
  * Spring Securityのユーザ検索用のサービスの実装クラス
@@ -24,7 +23,7 @@ class UserDetailsServiceImpl: UserDetailsService{
 
 	//DBからユーザ情報を検索するメソッドを実装したクラス
 	@Autowired
-	lateinit var userDao:LoginUserDao
+	lateinit var userDao: LoginUserDao
 
 	/**
 	 * UserDetailsServiceインタフェースの実装メソッド
@@ -34,9 +33,9 @@ class UserDetailsServiceImpl: UserDetailsService{
 	 */
 	override fun loadUserByUsername(userName:String): UserDetails{
 
-		var user :LoginUserEntity = userDao.findUser(userName)
+		var user :UsersRecord = userDao.findUser(userName)
 
-		if (user.equals("")) {
+		if (user.userName.equals("")) {
 			throw UsernameNotFoundException("User" + userName + "was not found in the database");
 		}
 		//権限のリスト
@@ -50,7 +49,7 @@ class UserDetailsServiceImpl: UserDetailsService{
 		var  encoder:BCryptPasswordEncoder = BCryptPasswordEncoder();
 
 		//UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトを
-		var userDetails: UserDetails = User(user.name, encoder.encode(user.password),grantList)
+		var userDetails: UserDetails = User(user.userName, encoder.encode(user.password),grantList)
 
 		return userDetails;
 	}

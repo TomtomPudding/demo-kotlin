@@ -1,8 +1,7 @@
-package com.tom.demokotlin.controller.chat
+package com.chartapp.controller.chat
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
@@ -12,11 +11,4 @@ class ChatController {
     fun openChatPage():String{
         return "talk"
     }
-
-
-    @PostMapping
-    fun chatPage():String{
-        return "talk"
-    }
-
 }
